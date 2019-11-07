@@ -87,17 +87,32 @@ void dolgozat_szazalek ()
     return;
 }
 
+void haromszog()
+{
+    int a,b,c;
+    printf("Haromszog oldalai: \n");
+    scanf("%d %d %d", &a,&b,&c);
+
+    if ( ((a+c<b) || (a+b<c)) || (b+c<a) )
+        printf("A haromszog nem szerkesztheto.\n");
+    else
+        printf("A haromszog szerkesztheto.\n");
+}
+
 int main()
 {
     // 1. Kérd be a víz hőfokát, állapítsd meg belőle a halmazállapotát!
-    //viz_hofoka();
+    viz_hofoka();
 
     // 2. Kérd be három gerelyhajító legjobb eredményét (méterben) és hirdess győztest!
-    //gerely();
+    gerely();
 
     // 3. Készíts programot, ami egy dolgozat pontszámából kiszámítja a százalékos eredményt, majd kiírja a jegyet!
     //    Egy dolgozatra legfeljebb 20 pont adható, az eredmények: 60% - 2, 70% - 3, 80% - 4, 90% - 5
     dolgozat_szazalek();
+
+    // 4. Készíts programot, ami egy háromszög oldalainak hosszát bekérve kiszámítja, hogy szerkeszthető-e a háromszög!
+    haromszog();
 
     return 0;
 }
