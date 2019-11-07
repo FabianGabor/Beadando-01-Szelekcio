@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 
 void viz_hofoka()
 {
@@ -93,7 +92,7 @@ void haromszog()
     printf("Haromszog oldalai: \n");
     scanf("%d %d %d", &a,&b,&c);
 
-    if ( ((a+c<b) || (a+b<c)) || (b+c<a) )
+    if ( ((a+c<=b) || (a+b<=c)) || (b+c<=a) )
         printf("A haromszog nem szerkesztheto.\n");
     else
         printf("A haromszog szerkesztheto.\n");
