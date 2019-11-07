@@ -17,29 +17,50 @@ void viz_hofoka()
         else printf("Halmazallapota gaz\n");
 }
 
+
+struct gerelyhajito
+{
+   char nev;
+   int tavolsag;
+};
+struct gerelyhajito gerelyhajitok[3] = {{'A',0},{'B',0},{'C',0}};
+
+void swap(struct gerelyhajito *a, struct gerelyhajito *b)
+{
+    struct gerelyhajito  temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+void bubbleSort(struct gerelyhajito arr[], int n)
+{
+    for (int i = 0; i < n-1; i++)
+        for (int j = 0; j < n-i-1; j++)
+            if (arr[j].tavolsag < arr[j+1].tavolsag)
+                swap(&arr[j], &arr[j+1]);
+}
+
 void gerely()
 {
-    int gerely1, gerely2, gerely3;
-    char helyezesek[3];
-
-    printf("\Gerely tavolsag (meter):\n");
-    scanf("%d %d %d", &gerely1, &gerely2, &gerely3);
-
-    helyezesek[gerely1]='A';
-    helyezesek[gerely2]='B';
-    helyezesek[gerely3]='C';
+    printf("Gerely tavolsag (meter):\n");
+    for (int i=0; i<3; i++)
+    {
+        printf("%c gerelyhajito tavolsag: ", gerelyhajitok[i].nev);
+        scanf("%d", &gerelyhajitok[i].tavolsag);
+    }
+    bubbleSort(gerelyhajitok, 3);
 
     printf("\nSorrend: \n");
-    for (int i=1;i<=3;i++)
+    for (int i=0; i<3; i++)
     {
-        printf("%c \n", helyezesek[i]);
+        printf("%c gerelyhajito tavolsag: %d\n", gerelyhajitok[i].nev, gerelyhajitok[i].tavolsag);
     }
 }
 
 int main()
 {
     // 1. Kérd be a víz hőfokát, állapítsd meg belőle a halmazállapotát!
-    viz_hofoka();
+    //viz_hofoka();
 
     // 2. Kérd be három gerelyhajító legjobb eredményét (méterben) és hirdess győztest!
     gerely();
