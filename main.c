@@ -57,14 +57,47 @@ void gerely()
     }
 }
 
+void dolgozat_szazalek ()
+{
+    int pontszam;
+    double szazalek;
+
+    do
+    {
+        printf("Dolgozat pontszama: ");
+        scanf("%d", &pontszam);
+    }
+    while ( (pontszam<0) || (pontszam>20) );
+
+    szazalek = 1.0 * pontszam / 20 * 100;
+
+    if (szazalek>=90)
+        printf("Jegy: 5\n");
+    else
+        if (szazalek>=80)
+            printf("Jegy: 4\n");
+        else
+            if (szazalek>=70)
+                printf("Jegy: 3\n");
+            else
+                if (szazalek>=60)
+                    printf("Jegy: 2\n");
+                else
+                    printf("Jegy: 1\n");
+    return;
+}
+
 int main()
 {
     // 1. Kérd be a víz hőfokát, állapítsd meg belőle a halmazállapotát!
     //viz_hofoka();
 
     // 2. Kérd be három gerelyhajító legjobb eredményét (méterben) és hirdess győztest!
-    gerely();
+    //gerely();
 
+    // 3. Készíts programot, ami egy dolgozat pontszámából kiszámítja a százalékos eredményt, majd kiírja a jegyet!
+    //    Egy dolgozatra legfeljebb 20 pont adható, az eredmények: 60% - 2, 70% - 3, 80% - 4, 90% - 5
+    dolgozat_szazalek();
 
     return 0;
 }
