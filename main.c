@@ -1,3 +1,7 @@
+/*
+ * https://github.com/FabianGabor/Beadando-01-Szelekcio
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 
